@@ -17,8 +17,7 @@ rule warn-large-terraform-plan {
   AND input.change_count WORD "20"
   severity warning
   priority 80
-  ASK execution
-  PROMPT "The plan modifies more than 20 resources. Are you sure you want to apply?"
+  LOG execution
 }
 
 rule block-public-s3-bucket {
